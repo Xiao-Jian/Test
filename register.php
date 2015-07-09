@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: ��
+ * User: 肖健
  * Date: 2015/7/6
  * Time: 13:54
  */
@@ -54,58 +54,65 @@
         return(true);
     }
 </script>
+<title>Shop - Register</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<h2>Welcome to Our Shop</h2>
+<h3>Shop - Register</h3>
+<fieldset>
+    <legend>Register</legend>
 
-<table width="766" height="350" border="0" align="center" cellpadding="0" cellspacing="0">
-    <tr>
-        <td width="561" align="center" valign="top" bgcolor="#FFFFFF"><table width="557"  height="15" border="0" align="center" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td width="500"><table width="557" border="0" align="center" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td  bgcolor="#555555"><table width="557" border="0" align="center" cellpadding="0" cellspacing="0">
-                                        <form name="form1" method="post" action="savereg.php" onSubmit="return chkinput(this)">
-                                            <tr>
-                                                <td width="100" height="20" bgcolor="#FFFFFF"><div align="center">NAME:</div></td>
-                                                <td width="397" bgcolor="#FFFFFF"><div align="left">
-                                                        <input type="text" name="usernc" size="25" class="inputcss" style="background-color:#e8f4ff " onMouseOver="this.style.backgroundColor='#ffffff'" onMouseOut="this.style.backgroundColor='#e8f4ff'">
-                                                        <span style="color: #FF0000">*</span>
-                                                        <input name="button2" type="button" class="buttoncss" onclick="chknc(form1.usernc.value)" value="Check your name">
-                                                    </div></td>
-                                            </tr>
-                                            <tr>
-                                                <td height="20" bgcolor="#FFFFFF"><div align="center">Enter Password:</div></td>
-                                                <td height="20" bgcolor="#FFFFFF"><div align="left">
-                                                        <input type="password" name="p1" size="25" class="inputcss" style="background-color:#e8f4ff " onMouseOver="this.style.backgroundColor='#ffffff'" onMouseOut="this.style.backgroundColor='#e8f4ff'">
-                                                        <span style="color: #FF0000">*</span></div></td>
-                                            </tr>
-                                            <tr>
-                                                <td height="20" bgcolor="#FFFFFF"><div align="center">Confirm Password:</div></td>
-                                                <td height="20" bgcolor="#FFFFFF"><div align="left">
-                                                        <input type="password" name="p2" size="25" class="inputcss" style="background-color:#e8f4ff " onMouseOver="this.style.backgroundColor='#ffffff'" onMouseOut="this.style.backgroundColor='#e8f4ff'">
-                                                        <span style="color: #FF0000">*</span></div></td>
-                                            </tr>
-                                            <tr>
-                                                <td height="20" bgcolor="#FFFFFF"><div align="center">E-mail:</div></td>
-                                                <td height="20" bgcolor="#FFFFFF"><div align="left">
-                                                        <input type="text" name="email" size="25" class="inputcss" style="background-color:#e8f4ff " onMouseOver="this.style.backgroundColor='#ffffff'" onMouseOut="this.style.backgroundColor='#e8f4ff'">
-                                                        <span style="color: #FF0000">*</span></div></td>
-                                            </tr>
-                                            <tr>
-                                                <td height="20" colspan="2" bgcolor="#FFFFFF"><div align="center">
-                                                        <input name="submit2" type="submit" class="buttoncss" value="Submit">
-                                                        &nbsp;&nbsp;
-                                                        <input name="reset" type="reset" class="buttoncss" value="Reset">
-                                                    </div></td>
-                                            </tr>
-                                        </form>
-                                    </table></td>
-                            </tr>
-                        </table>
-                        <table width="557" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td width="547"><div align="center" style="color: #FF0000">Note: With * to add content!</div></td>
-                            </tr>
-                        </table></td>
-                </tr>
-            </table></td>
-    </tr>
-</table>
+    <table width="766" height="150" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="561" align="center" valign="top" bgcolor="#FFFFFF"><table width="557"  height="15" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="500"><table width="557" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td  bgcolor="#555555"><table width="557" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <form name="form1" method="post" action="savereg.php" onSubmit="return chkinput(this)">
+                                                <tr>
+                                                    <td width="100" height="20" bgcolor="#FFFFFF"><div align="center">用户名：</div></td>
+                                                    <td width="397" bgcolor="#FFFFFF"><div align="left">
+                                                            <input type="text" name="usernc" size="25" class="inputcss" style="background-color:#ffffff " >
+                                                            <span style="color: #FF0000">*</span>
+                                                            <input name="button2" type="button" class="buttoncss" onclick="chknc(form1.usernc.value)" value="检查名称是否可用">
+                                                        </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20" bgcolor="#FFFFFF"><div align="center">输入密码：</div></td>
+                                                    <td height="20" bgcolor="#FFFFFF"><div align="left">
+                                                            <input type="password" name="p1" size="25" class="inputcss" style="background-color:#ffffff ">
+                                                            <span style="color: #FF0000">*</span></div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20" bgcolor="#FFFFFF"><div align="center">确认密码：</div></td>
+                                                    <td height="20" bgcolor="#FFFFFF"><div align="left">
+                                                            <input type="password" name="p2" size="25" class="inputcss" style="background-color:#ffffff ">
+                                                            <span style="color: #FF0000">*</span></div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20" bgcolor="#FFFFFF"><div align="center">E-mail:</div></td>
+                                                    <td height="20" bgcolor="#FFFFFF"><div align="left">
+                                                            <input type="text" name="email" size="25" class="inputcss" style="background-color:#ffffff ">
+                                                            <span style="color: #FF0000">*</span></div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20" colspan="2" bgcolor="#FFFFFF"><div align="center">
+                                                            <input name="submit2" type="submit" class="buttoncss" value="Submit">
+                                                            &nbsp;&nbsp;
+                                                            <input name="reset" type="reset" class="buttoncss" value="Reset">
+                                                        </div></td>
+                                                </tr>
+                                            </form>
+                                        </table></td>
+                                </tr>
+                            </table>
+                            <table width="557" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="547"><div align="center" style="color: #FF0000">注意: 带*的必须填写</div></td>
+                                </tr>
+                            </table></td>
+                    </tr>
+                </table></td>
+        </tr>
+    </table>
+</fieldset>

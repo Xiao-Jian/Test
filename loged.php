@@ -1,20 +1,37 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: ½¡
+ * User: è‚–å¥
  * Date: 2015/7/5
  * Time: 15:07
  */
-
-//Ê¹ÓÃ»á»°ÄÚ´æ´¢µÄ±äÁ¿ÖµÖ®Ç°±ØÐëÏÈ¿ªÆô»á»°
-session_start();
-//Ê¹ÓÃÒ»¸ö»á»°±äÁ¿¼ì²éµÇÂ¼×´Ì¬
-if(isset($_SESSION['username'])){
-    echo 'You are Logged as '.$_SESSION['username'].'<br/>';
-    //µã»÷¡°Log Out¡±,Ôò×ªµ½logOutÒ³Ãæ½øÐÐ×¢Ïú
-    echo '<a href="logOut.php"> Log Out('.$_SESSION['username'].')</a>';
-}
-/**ÔÚÒÑµÇÂ¼Ò³ÃæÖÐ£¬¿ÉÒÔÀûÓÃÓÃ»§µÄsessionÈç$_SESSION['username']¡¢
- * $_SESSION['user_id']¶ÔÊý¾Ý¿â½øÐÐ²éÑ¯£¬¿ÉÒÔ×öºÃ¶àºÃ¶àÊÂÇé*/
-
 ?>
+
+<html>
+    <head>
+        <title>Shop - Index</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h2>Welcome to Our Shop</h2>
+        <h3>Shop - Logged</h3>
+        <fieldset>
+            <legend>Logged</legend>
+            <?php
+            //å¯åŠ¨session
+            session_start();
+            //å¦‚æžœç”¨æˆ·å·²è¾“è¿‡ç”¨æˆ·åï¼Œåˆ™å›žæ˜¾ç”¨æˆ·å
+            if(isset($_SESSION['username'])){
+                echo 'æ‚¨å·²ç™»å½•ç”¨æˆ· '.$_SESSION['username'].'<br/>';
+                //ç‚¹å‡»â€œLog Outâ€ï¼Œåˆ™è½¬åˆ°logOut.phpé¡µé¢è¿›è¡Œcookieçš„æ³¨é”€
+                echo '<a href="logOut.php"> ç™»å‡º('.$_SESSION['username'].')</a>';
+                echo '<a href="shopCar.php"> æŸ¥çœ‹è´­ç‰©è½¦</a>';
+            }
+            ?>
+        </fieldset>
+        <h2>       </h2>
+        <?php
+        include("index.php");
+        ?>
+    </body>
+</html>

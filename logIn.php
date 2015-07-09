@@ -1,14 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Ω°
+ * User: ËÇñÂÅ•
  * Date: 2015/7/5
  * Time: 15:07
  */
 
-//≤Â»Î¡¨Ω” ˝æ›ø‚µƒœ‡πÿ–≈œ¢
+//ÂØºÂÖ•Êï∞ÊçÆÂ∫ìÈÖçÁΩÆ
 include("conn.php");
-//ø™∆Ù“ª∏ˆª·ª∞
+//ÂêØÂä®session
 session_start();
 
 function test_input($data) {
@@ -19,23 +19,22 @@ function test_input($data) {
 }
 
 $error_msg = "";
-//»Áπ˚”√ªßŒ¥µ«¬º£¨º¥Œ¥…Ë÷√$_SESSION['user_id'] ±£¨÷¥––“‘œ¬¥˙¬Î
+//Âà§Êñ≠Áî®Êà∑ÊòØÂê¶Â∑≤ÁªèËÆæÁΩÆcookieÔºåÂ¶ÇÊûúÊú™ËÆæÁΩÆ$_COOKIE['user_id']Êó∂ÔºåÊâßË°å‰ª•‰∏ã‰ª£Á†Å
 if(!isset($_SESSION['user_id'])){
-    if(isset($_POST['submit'])){//”√ªßÃ·Ωªµ«¬º±Ìµ• ±÷¥––»Áœ¬¥˙¬Î
-
+    if(isset($_POST['submit'])){
+        //Âà§Êñ≠Áî®Êà∑ÊòØÂê¶Êèê‰∫§ÁôªÂΩïË°®ÂçïÔºåÂ¶ÇÊûúÊòØÂàôÊâßË°åÂ¶Ç‰∏ã‰ª£Á†Å
         $user_username = test_input($_POST['username']);
         $user_password = test_input($_POST['password']);
 
         $data = mysql_query("select * from mismatch_user");
-        //»Ù≤ÈµΩµƒº«¬º’˝∫√Œ™“ªÃı£¨‘Ú…Ë÷√SESSION£¨Õ¨ ±Ω¯––“≥√Ê÷ÿ∂®œÚ
         while($row = mysql_fetch_array($data)) {
             if ($row['username'] == $user_username && $row['password'] == $user_password) {
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['username'] = $row['username'];
                 $home_url = 'loged.php';
                 header('Location: ' . $home_url);
-            } else {//»Ù≤ÈµΩµƒº«¬º≤ª∂‘£¨‘Ú…Ë÷√¥ÌŒÛ–≈œ¢
-                $error_msg = 'Sorry, you must enter a valid username and password to log in.';
+            } else {//Ëã•Êú™Êü•Âà∞ÂåπÈÖçÁöÑËÆ∞ÂΩïÔºåÂàôËÆæÁΩÆÈîôËØØ‰ø°ÊÅØ
+                $error_msg = 'ÂØπ‰∏çËµ∑ÔºåÊÇ®ÁöÑÁî®Êà∑ÂêçÊàñÂØÜÁ†ÅÊúâÈîôÔºÅ';
             }
         }
     }
@@ -43,45 +42,46 @@ if(!isset($_SESSION['user_id'])){
         $home_url = 'register.php';
         header('Location: ' . $home_url);
     }
-}else{//»Áπ˚”√ªß“—æ≠µ«¬º£¨‘Ú÷±Ω”Ã¯◊™µΩ“—æ≠µ«¬º“≥√Ê
+}else{//Â¶ÇÊûúÁî®Êà∑Â∑≤ÁªèÁôªÂΩïÔºåÂàôÁõ¥Êé•Ë∑≥ËΩ¨Âà∞Â∑≤ÁªèÁôªÂΩïÈ°µÈù¢
     $home_url = 'loged.php';
     header('Location: '.$home_url);
 }
 ?>
 <html>
-<head>
-    <title>Shop - Log In</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-<h2>Welcome to Our Shop</h2>
-<h3>Shop - Log In</h3>
-<!--Õ®π˝$_SESSION['user_id']Ω¯––≈–∂œ£¨»Áπ˚”√ªßŒ¥µ«¬º£¨‘Úœ‘ æµ«¬º±Ìµ•£¨»√”√ªß ‰»Î”√ªß√˚∫Õ√‹¬Î-->
+    <head>
+        <title>Shop - Log In</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h2>Welcome to Our Shop</h2>
+        <h3>Shop - Log In</h3>
+        <!--ÈÄöËøá$_COOKIE['user_id']ËøõË°åÂà§Êñ≠ÔºåÂ¶ÇÊûúÁî®Êà∑Êú™ÁôªÂΩïÔºåÂàôÊòæÁ§∫ÁôªÂΩïË°®ÂçïÔºåËÆ©Áî®Êà∑ËæìÂÖ•Áî®Êà∑ÂêçÂíåÂØÜÁ†Å-->
 <?php
 if(!isset($_SESSION['user_id'])){
     echo '<p class="error">'.$error_msg.'</p>';
     ?>
-    <!-- $_SERVER['PHP_SELF']¥˙±Ì”√ªßÃ·Ωª±Ìµ• ±£¨µ˜”√◊‘…ÌphpŒƒº˛ -->
+    <!-- $_SERVER['PHP_SELF']‰ª£Ë°®Áî®Êà∑Êèê‰∫§Ë°®ÂçïÊó∂ÔºåË∞ÉÁî®Ëá™Ë∫´phpÊñá‰ª∂-->
     <form method = "post" action="<?php echo $_SERVER['PHP_SELF'];?>">
         <fieldset>
             <legend>Log In</legend>
 
-            <label for="username">Username:</label>
-            <!-- »Áπ˚”√ªß“— ‰π˝”√ªß√˚£¨‘Úªÿœ‘”√ªß√˚ -->
+            <label for="username">Áî®Êà∑Ôºö</label>
+            <!--Â¶ÇÊûúÁî®Êà∑Â∑≤ËæìËøáÁî®Êà∑ÂêçÔºåÂàôÂõûÊòæÁî®Êà∑Âêç-->
             <input type="text" id="username" name="username"
                    value="<?php if(!empty($user_username)) echo $user_username; ?>" />
 
             <br/>
 
-            <label for="password">Password:</label>
+            <label for="password">ÂØÜÁ†ÅÔºö</label>
             <input type="password" id="password" name="password"/>
 
         </fieldset>
-        <input type="submit" value="Login" name="submit"/>
-        <input type="submit" value="Register" name="register"/>
+        <input type="submit" value="ÁôªÂΩï" name="submit"/>
+        <input type="submit" value="Ê≥®ÂÜå" name="register"/>
     </form>
-<?php
-}
-?>
-</body>
+    <?php
+    }
+    include("index.php");
+    ?>
+    </body>
 </html>
